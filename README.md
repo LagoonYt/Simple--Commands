@@ -86,7 +86,7 @@ Make sure to set these variables in a `.env` file in the root directory of your 
 
 ## Commands Format
 
-Unfortunately simmple-commands-Js was based off of discordJs/builders As of right now this will prevent you using legacy commands e.g. !ping. you will have to use 
+Unfortunately `simmple-commands-Js` was based off of `@discordJs/builders` As of right now this will prevent you using legacy commands e.g. !ping. you will have to use 
 /ping. Although nothing is preventing you from leaving legacy commands in your main file. Do not worry we will change this in the future, I have lots of plans before i do that though.
 
 ```js
