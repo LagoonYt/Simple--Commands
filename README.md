@@ -108,7 +108,7 @@ module.exports = {
   
   async execute(interaction) {
     //Add in your commands code here
-     const command` = interaction.options.getString('commandoption').toLowerCase();
+     const command = interaction.options.getString('commandoption').toLowerCase();
   },
 };
 
