@@ -84,7 +84,7 @@ Before using the `simple-commands-js` module, make sure to set the following env
 Make sure to set these variables in a `.env` file in the root directory of your project.
 
 
-##Commands format
+## Commands format
 ```js
 const { SlashCommandBuilder } = require('@discordjs/builders');
 
