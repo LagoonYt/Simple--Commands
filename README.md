@@ -9,12 +9,37 @@ To install the `simple-commands-js` module, run the following command:
 ```shell
 npm i simple-commands-js
 ```
+
+
+
 ## Usage
+
+You must import the module to your code:
+
+```js
+const { commands } = require('simple-commands-js');
+```
+To call on the module you must use:
+
+```js
+await commands.load(process.env.CLIENT_ID)
+await commands.register(client, loadedCommands, guildId)
+await commands.clear(client, process.env.CLIENT_ID)
+```
+loadedCommands is what you have named commands.load
+
+Once you have correctly setup your code, you can now run it. 
+When you run the code it will ask you if you want a commands folder created for you.
+It will create two sub folders Admin and Entertainment.
+You are not restricted to these. you can have as many subfolders as you want with any name
+```js
+const loadedCommands = await commands.Load(process.env.CLIENT_ID);
+```
 
 Here's an example of how to use the simple-commands-js module in your Discord bot:
 
 ```js
-const { commands } = require('C:/Users/lloyd/Documents/Simple-commands/index.js');
+const { commands } = require('simple-commands-js');
 const { Client, GatewayIntentBits } = require('discord.js');
 const { config } = require('dotenv');
 
