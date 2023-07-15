@@ -82,3 +82,28 @@ Before using the `simple-commands-js` module, make sure to set the following env
 - `CLEAR_COMMANDS`: Specify whether to clear your bot's commands from the Discord commands list (set to "yes" or "no").
 
 Make sure to set these variables in a `.env` file in the root directory of your project.
+
+
+##Commands format
+```js
+const { SlashCommandBuilder } = require('@discordjs/builders');
+
+
+module.exports = {
+  // Define the slash command data
+  data: new SlashCommandBuilder()
+    .setName('Command')
+    .setDescription('Does command stuff')
+    .setDefaultMemberPermissions(PermissionFlagsBits.Administrator)
+    .addStringOption(option => option
+        .setName('triggerword')
+        .setDescription('The word to add as a trigger word')
+        .setRequired(true)
+    ),
+
+  async execute(interaction) {
+    //Add in your commands code here
+  },
+};
+
+```
