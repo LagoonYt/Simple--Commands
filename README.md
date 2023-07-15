@@ -95,18 +95,20 @@ const { SlashCommandBuilder } = require('@discordjs/builders');
 
 module.exports = {
   // Define the slash command data
+  //The name and description are required
   data: new SlashCommandBuilder()
     .setName('Command')
     .setDescription('Does command stuff')
-    .setDefaultMemberPermissions(PermissionFlagsBits.Administrator)
+    
     .addStringOption(option => option
-        .setName('triggerword')
-        .setDescription('The word to add as a trigger word')
+        .setName('commandoption')
+        .setDescription('Tells the user hat the option includes e.g. has to be a user')
         .setRequired(true)
     ),
-
+  
   async execute(interaction) {
     //Add in your commands code here
+     const command` = interaction.options.getString('commandoption').toLowerCase();
   },
 };
 
