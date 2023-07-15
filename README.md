@@ -59,14 +59,14 @@ const client = new Client({
 client.login(process.env.TOKEN).then(async () => {
 //Check if the user wants the commands to be cleared from discord commands list
   if (process.env.CLEAR_COMMANDS === 'yes') {
-//Use simple-commands-js to clear the commands
+//Use simple-commands.js to clear the commands
     await commands.Clear(client, process.env.CLIENT_ID);
   } else {
 //If the user stated they do not want to clear commands 
-//Then load the commands into the bot file using simple-commands-js module
+//Then load the commands into the bot file using simple-commands.js module
     const loadedCommands = await commands.Load(process.env.CLIENT_ID); // Await the result of the Load function
     const guildId = process.env.GUILD_ID;
-//Use the simple-commands-js module to finally register the commands with discord
+//Use the simple-commands.js module to finally register the commands with discord
     commands.Register(client, loadedCommands, guildId);
   }
 });
