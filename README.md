@@ -1,13 +1,13 @@
-# Simple-commands-js
+# Simple-commands.js
 
 A module for creating and registering commands in a Discord bot.
 
 ## Installation
 
-To install the `simple-commands-js` module, run the following command:
+To install the `simple-commands.js` module, run the following command:
 
 ```shell
-npm i simple-commands-js
+npm i simple-commands.js
 ```
 
 
@@ -17,7 +17,7 @@ npm i simple-commands-js
 First, import the module into your code:
 
 ```js
-const { commands } = require('simple-commands-js');
+const { commands } = require('simple-commands.js');
 ```
 To use the module, you can make the following function calls:
 
@@ -35,10 +35,10 @@ Once you have set up your code correctly, you can run it. When you run the code,
 The module will create two subfolders: "Admin" and "Entertainment". However, you are not restricted to these. You can have as many subfolders as you want with any name.
 
 
-Here's an example of how to use the simple-commands-js module in your Discord bot:
+Here's an example of how to use the simple-commands.js module in your Discord bot:
 
 ```js
-const { commands } = require('simple-commands-js');
+const { commands } = require('simple-commands.js');
 const { Client, GatewayIntentBits } = require('discord.js');
 const { config } = require('dotenv');
 
@@ -74,7 +74,7 @@ client.login(process.env.TOKEN).then(async () => {
 ```
 ### Configuration
 
-Before using the `simple-commands-js` module, make sure to set the following environment variables:
+Before using the `simple-commands.js` module, make sure to set the following environment variables:
 
 - `TOKEN`: Your bot's authentication token.
 - `GUILD_ID`: The ID of your bot's test server.
@@ -86,7 +86,7 @@ Make sure to set these variables in a `.env` file in the root directory of your 
 
 ## Commands Format
 
-Unfortunately `simmple-commands-Js` was based off of `@discordJs/builders` As of right now this will prevent you using legacy commands e.g. !ping. you will have to use 
+Unfortunately `simmple-commands.Js` was based off of `@discordJs/builders` As of right now this will prevent you using legacy commands e.g. !ping. you will have to use 
 /ping. Although nothing is preventing you from leaving legacy commands in your main file. Do not worry we will change this in the future, I have lots of plans before i do that though.
 
 ```js
