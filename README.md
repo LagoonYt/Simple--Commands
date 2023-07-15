@@ -42,10 +42,10 @@ const { commands } = require('simple-commands.js');
 const { Client, GatewayIntentBits } = require('discord.js');
 const { config } = require('dotenv');
 
-//Load the enviroment variables from the .env file
+// Load the environment variables from the .env file
 config();
 
-//State which intents your bot will need
+// State which intents your bot will need
 const client = new Client({
   intents: [
     GatewayIntentBits.Guilds,
@@ -55,21 +55,22 @@ const client = new Client({
   ],
 });
 
-//Login with the provided TOKEN
+// Login with the provided token
 client.login(process.env.TOKEN).then(async () => {
-//Check if the user wants the commands to be cleared from discord commands list
+  // Check if the user wants the commands to be cleared from the Discord commands list
   if (process.env.CLEAR_COMMANDS === 'yes') {
-//Use simple-commands.js to clear the commands
-    await commands.Clear(client, process.env.CLIENT_ID);
+    // Use simple-commands.js to clear the commands
+    await commands.clear(client, process.env.CLIENT_ID);
   } else {
-//If the user stated they do not want to clear commands 
-//Then load the commands into the bot file using simple-commands.js module
-    const loadedCommands = await commands.Load(process.env.CLIENT_ID); // Await the result of the Load function
+    // If the user stated they do not want to clear commands,
+    // then load the commands into the bot file using the simple-commands.js module
+    const loadedCommands = await commands.load(process.env.CLIENT_ID); // Await the result of the load function
     const guildId = process.env.GUILD_ID;
-//Use the simple-commands.js module to finally register the commands with discord
-    commands.Register(client, loadedCommands, guildId);
+    // Use the simple-commands.js module to finally register the commands with Discord
+    commands.register(client, loadedCommands, guildId);
   }
 });
+
 
 ```
 ### Configuration
@@ -92,24 +93,24 @@ Unfortunately `simmple-commands.Js` was based off of `@discordJs/builders` As of
 ```js
 const { SlashCommandBuilder } = require('@discordjs/builders');
 
-
 module.exports = {
   // Define the slash command data
-  //The name and description are required
+  // The name and description are required
   data: new SlashCommandBuilder()
-    .setName('Command')
+    .setName('command')
     .setDescription('Does command stuff')
-    
-    .addStringOption(option => option
-        .setName('commandoption')
-        .setDescription('Tells the user hat the option includes e.g. has to be a user')
+    .addStringOption((option) =>
+      option
+        .setName('commandOption')
+        .setDescription('Tells the user what the option includes, e.g., has to be a user')
         .setRequired(true)
     ),
-  
+
   async execute(interaction) {
-    //Add in your commands code here
-     const command = interaction.options.getString('commandoption').toLowerCase();
+    // Add your command code here
+    const command = interaction.options.getString('commandOption').toLowerCase();
   },
 };
+
 
 ```
