@@ -14,31 +14,25 @@ npm i simple-commands-js
 
 ## Usage
 
-You must import the module to your code:
+First, import the module into your code:
 
 ```js
 const { commands } = require('simple-commands-js');
 ```
-To call on the module you must use:
+To use the module, you can make the following function calls:
 
 ```js
 await commands.load(process.env.CLIENT_ID)
 await commands.register(client, loadedCommands, guildId)
 await commands.clear(client, process.env.CLIENT_ID)
 ```
-loadedCommands is what you have named commands.load
+The loadedCommands variable represents the result of the commands.load function:
 ```js
 const loadedCommands = await commands.Load(process.env.CLIENT_ID);
 ```
-Once you have correctly setup your code, you can now run it. 
+Once you have set up your code correctly, you can run it. When you run the code, it will prompt you to create a commands folder.
 
-When you run the code it will ask you if you want a commands folder created for you.
-
-It will create two sub folders Admin and Entertainment.
-
-You are not restricted to these. 
-
-You can have as many subfolders as you want with any name!
+The module will create two subfolders: "Admin" and "Entertainment". However, you are not restricted to these. You can have as many subfolders as you want with any name.
 
 
 Here's an example of how to use the simple-commands-js module in your Discord bot:
