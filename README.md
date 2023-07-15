@@ -72,10 +72,13 @@ client.login(process.env.TOKEN).then(async () => {
 });
 
 ```
-And in the .env file you should have:
-```env
-TOKEN=(Your bots TOKEN)
-GUILD_ID=(Your bots test Server)
-CLIENT_ID=(Your bots client ID)
-CLEAR_COMMANDS=(Clear your bots commands yes/no)
-```
+### Configuration
+
+Before using the `simple-commands-js` module, make sure to set the following environment variables:
+
+- `TOKEN`: Your bot's authentication token.
+- `GUILD_ID`: The ID of your bot's test server.
+- `CLIENT_ID`: Your bot's client ID.
+- `CLEAR_COMMANDS`: Specify whether to clear your bot's commands from the Discord commands list (set to "yes" or "no").
+
+Make sure to set these variables in a `.env` file in the root directory of your project.
