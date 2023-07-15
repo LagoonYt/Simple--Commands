@@ -31,7 +31,7 @@ loadedCommands is what you have named commands.load
 Once you have correctly setup your code, you can now run it. 
 When you run the code it will ask you if you want a commands folder created for you.
 It will create two sub folders Admin and Entertainment.
-You are not restricted to these. you can have as many subfolders as you want with any name
+You are not restricted to these. You can have as many subfolders as you want with any name!
 ```js
 const loadedCommands = await commands.Load(process.env.CLIENT_ID);
 ```
